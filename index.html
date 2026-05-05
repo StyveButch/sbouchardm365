@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steeve Bouchard — Gouvernance & Sécurité Microsoft 365</title>
+  <meta name="description" content="Consultant en gouvernance et sécurité Microsoft 365 — diagnostic, accompagnement et mandats ciblés." />
+  <style>
+    :root{
+      --bg:#f8fafc; --surface:#ffffff; --muted:#475569; --text:#0f172a;
+      --border:#e2e8f0; --blue:#2563eb; --blue2:#1d4ed8; --blueSoft:#eff6ff;
+      --shadow:0 18px 40px rgba(15,23,42,.08);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,var(--bg),#fff);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--border)}
+    header .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:14px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:86px;height:auto}
+    .brand .name{font-weight:900;font-size:18px;line-height:1.1}
+    .brand .tag{color:var(--muted);font-size:13px;margin-top:3px}
+    nav.links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    nav.links a{color:#334155;font-weight:700;font-size:14px}
+    nav.links a:hover{color:#0f172a}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:#fff;border-radius:12px;padding:12px 18px;font-weight:800;box-shadow:0 10px 20px rgba(37,99,235,.18)}
+    .btn:hover{background:var(--blue2)}
+    .btn.secondary{background:#fff;color:var(--blue);border:1px solid #c7d2fe;box-shadow:none}
+    .btn.secondary:hover{background:var(--blueSoft)}
+
+    .hero{padding:64px 0 36px}
+    .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+    h1{font-size:52px;line-height:1.06;margin:0 0 16px;font-weight:950;letter-spacing:-.6px}
+    .lead{font-size:18px;color:var(--muted);margin:0 0 22px;max-width:52ch}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--blueSoft);color:#1e40af;border:1px solid #bfdbfe;border-radius:999px;padding:8px 12px;font-weight:900;font-size:12px;margin-bottom:14px}
+
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .card.soft{background:var(--blueSoft);border-color:#bfdbfe;box-shadow:none}
+    .card h3{margin:0 0 10px;font-size:18px}
+    ul{margin:12px 0 0 18px;color:#334155}
+    li{margin:6px 0}
+
+    section{padding:54px 0}
+    .section-title{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+    .section-title h2{margin:0;font-size:32px;letter-spacing:-.3px}
+    .icon{width:22px;height:22px;fill:var(--blue)}
+    .sub{margin:0 0 22px;color:var(--muted);max-width:80ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .offer{display:flex;flex-direction:column;gap:14px}
+    .offer .top{display:flex;align-items:flex-start;gap:12px}
+    .offer p{margin:0;color:var(--muted)}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;color:#475569;font-size:12px}
+    .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:#fff}
+
+    form{display:grid;gap:14px}
+    label{display:grid;gap:6px;font-weight:800;font-size:13px;color:#334155}
+    input, textarea{font:inherit;padding:12px 12px;border-radius:12px;border:1px solid var(--border);background:#fff}
+    input:focus, textarea:focus{outline:3px solid rgba(37,99,235,.15);border-color:#93c5fd}
+    textarea{min-height:120px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .hint{font-size:12px;color:var(--muted);margin:0}
+    .success{display:none;margin-top:10px;background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;border-radius:12px;padding:10px 12px;font-weight:800}
+
+    footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+
+    @media (max-width: 900px){
+      .grid2{grid-template-columns:1fr}
+      h1{font-size:40px}
+      .grid3{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr}
+      nav.links{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="bar">
+      <a class="brand" href="#top">
+        <img src="assets/steeve_bouchard_logo_final.png" alt="Logo Steeve Bouchard" />
+        <div>
+          <div class="name">Steeve Bouchard</div>
+          <div class="tag">Consultant en gouvernance & sécurité Microsoft 365</div>
+        </div>
+      </a>
+      <nav class="links" aria-label="Navigation">
+        <a href="#diagnostic">Diagnostic</a>
+        <a href="#methodologie">Méthodologie</a>
+        <a href="#offres">Offres</a>
+        <a href="#cas">Cas d’usage</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="top" class="container hero">
+    <div class="grid2">
+      <div>
+        <div class="pill"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg> Diagnostic d’entrée • Microsoft 365</div>
+        <h1>Clarifiez la gouvernance<br><span style="color:var(--blue)">et la sécurité Microsoft 365</span></h1>
+        <p class="lead">J’aide les directions et équipes TI à reprendre le contrôle de Microsoft 365 : décisions claires, réduction des risques et gouvernance durable.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="#diagnostic">Démarrer avec un diagnostic</a>
+          <a class="btn secondary" href="#offres">Voir les offres</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Ce que vous obtenez</h3>
+        <ul>
+          <li>Une lecture claire et indépendante de votre tenant M365</li>
+          <li>Une priorisation des risques réellement importants</li>
+          <li>Des décisions outillées pour la direction</li>
+          <li>Une vision à 12 mois, pas des correctifs isolés</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section id="diagnostic">
+    <div class="container">
+      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg><h2>Diagnostic M365 (point d’entrée recommandé)</h2></div>
+      <p class="sub">Avant d’investir davantage dans Microsoft 365, le diagnostic vous donne une vue d’ensemble : où vous en êtes, quels sont les risques réels, et quelles décisions doivent être prises.</p>
+      <div class="grid2">
+        <div class="card">
+          <h3>Ce que couvre le diagnostic</h3>
+          <ul>
+            <li>Gouvernance Teams, SharePoint et OneDrive</li>
+            <li>Accès, identités et responsabilités</li>
+            <li>Sécurité orientée usages et risques métiers</li>
+            <li>Contexte Canada et exigences européennes (RGPD) si applicable</li>
+          </ul>
+          <div class="meta" style="margin-top:14px">
+            <span class="badge">⏱️ 7–10 jours ouvrables</span>
+            <span class="badge">📍 À distance (sur site au besoin)</span>
+            <span class="badge">🎯 Livrables direction</span>
+          </div>
+        </div>
+        <div class="card soft">
+          <h3>Livrables</h3>
+          <ul>
+            <li>Rapport exécutif (direction)</li>
+            <li>Cartographie des risques priorisés</li>
+            <li>Recommandations concrètes et applicables</li>
+            <li>Feuille de route 12 mois</li>
+            <li>Restitution exécutive (Q/R)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="methodologie">
+    <div class="container">
+      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M7 3a1 1 0 011 1v2h8V4a1 1 0 112 0v2h1a1 1 0 110 2H5a1 1 0 110-2h1V4a1 1 0 011-1zm-1 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2v-8zm2 0v8h8v-8H8z'/></svg><h2>Méthodologie</h2></div>
+      <p class="sub">Une approche simple et directionnelle : comprendre l’environnement, analyser le risque, et outiller la décision. Pas de sur‑ingénierie.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M7 3a1 1 0 011 1v2h8V4a1 1 0 112 0v2h1a1 1 0 110 2H5a1 1 0 110-2h1V4a1 1 0 011-1zm-1 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2v-8zm2 0v8h8v-8H8z'/></svg><h3 style="margin:0">1. Comprendre</h3></div>
+          <p style="margin:0;color:var(--muted)">Entretiens ciblés (direction/TI) et clarification des objectifs, contraintes et usages réels.</p>
+        </div>
+        <div class="card">
+          <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg><h3 style="margin:0">2. Analyser</h3></div>
+          <p style="margin:0;color:var(--muted)">Analyse de la gouvernance, des accès et de la sécurité, sous l’angle du risque et de la décision.</p>
+        </div>
+        <div class="card">
+          <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M9 11a1 1 0 011.707-.707l1.586 1.586 3.586-3.586A1 1 0 0117.293 9.7l-4.293 4.293a1 1 0 01-1.414 0L9 11.414A1 1 0 019 11z'/><path d='M6 2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm0 2v16h12V4H6z'/></svg><h3 style="margin:0">3. Décider</h3></div>
+          <p style="margin:0;color:var(--muted)">Restitution exécutive : priorités, arbitrages, feuille de route 12 mois et prochaines étapes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offres" style="background:#f8fafc;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 2a1 1 0 00-1 1v2H6a3 3 0 00-3 3v9a3 3 0 003 3h12a3 3 0 003-3V8a3 3 0 00-3-3h-3V3a1 1 0 00-1-1h-4zm1 3V4h2v1h-2zM6 7h12a1 1 0 011 1v2H5V8a1 1 0 011-1zm13 5v5a1 1 0 01-1 1H6a1 1 0 01-1-1v-5h14z'/></svg><h2>Offres</h2></div>
+      <p class="sub">Des offres cadrées, orientées valeur et décisions. Démarrage recommandé par le diagnostic.</p>
+      <div class="grid3">
+        <div class="card offer">
+          <div class="top"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg><div><h3>1) Diagnostic gouvernance & sécurité M365</h3><p>Photo claire de l’existant, risques et feuille de route.</p></div></div>
+          <div class="meta"><span class="badge">⏱️ 7–10 jours</span><span class="badge">📄 Rapport + roadmap</span></div>
+          <ul>
+            <li>Revue gouvernance Teams/SharePoint/OneDrive</li>
+            <li>Accès, rôles, responsabilités (vision direction)</li>
+            <li>Priorisation des risques et recommandations</li>
+            <li>Feuille de route 12 mois</li>
+          </ul>
+        </div>
+        <div class="card offer">
+          <div class="top"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M7 3a1 1 0 011 1v2h8V4a1 1 0 112 0v2h1a1 1 0 110 2H5a1 1 0 110-2h1V4a1 1 0 011-1zm-1 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2v-8zm2 0v8h8v-8H8z'/></svg><div><h3>2) Accompagnement mensuel (retainer)</h3><p>Référent externe pour maintenir la posture et arbitrer les décisions.</p></div></div>
+          <div class="meta"><span class="badge">🗓️ 1–2 j / mois</span><span class="badge">✅ Suivi mensuel</span></div>
+          <ul>
+            <li>Support décisionnel direction/TI (avis indépendant)</li>
+            <li>Revue posture sécurité & gouvernance (mensuelle)</li>
+            <li>Backlog priorisé (quoi faire / quoi éviter)</li>
+            <li>Optimisation licences et rationalisation fournisseurs</li>
+          </ul>
+        </div>
+        <div class="card offer">
+          <div class="top"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 2a1 1 0 00-1 1v2H6a3 3 0 00-3 3v9a3 3 0 003 3h12a3 3 0 003-3V8a3 3 0 00-3-3h-3V3a1 1 0 00-1-1h-4zm1 3V4h2v1h-2zM6 7h12a1 1 0 011 1v2H5V8a1 1 0 011-1zm13 5v5a1 1 0 01-1 1H6a1 1 0 01-1-1v-5h14z'/></svg><div><h3>3) Mandats ciblés</h3><p>Missions précises, cadrées, avec transfert et documentation.</p></div></div>
+          <div class="meta"><span class="badge">🎯 3 j → plusieurs semaines</span><span class="badge">📘 Documentation incluse</span></div>
+          <ul>
+            <li>MFA / accès conditionnels (cadrage + durcissement)</li>
+            <li>Structuration Teams/SharePoint (règles, modèles)</li>
+            <li>Préparation audit / cyber (gaps & plan d’action)</li>
+            <li>Transfert de connaissances et standards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cas">
+    <div class="container">
+      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M9 11a1 1 0 011.707-.707l1.586 1.586 3.586-3.586A1 1 0 0117.293 9.7l-4.293 4.293a1 1 0 01-1.414 0L9 11.414A1 1 0 019 11z'/><path d='M6 2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm0 2v16h12V4H6z'/></svg><h2>Cas d’usage (anonymes)</h2></div>
+      <p class="sub">Exemples d’interventions réelles, anonymisées : focus sur la décision et la réduction du risque.</p>
+      <div class="grid2">
+        <div class="card">
+          <h3>Organisation multi‑sites (Canada / Europe)</h3>
+          <ul>
+            <li>Gouvernance Teams inexistante, rôles hétérogènes</li>
+            <li>Décisions prises au fil de l’eau</li>
+            <li><strong>Résultat :</strong> cadre de gouvernance, clarification des responsabilités, réduction du risque organisationnel</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>PME en croissance (France)</h3>
+          <ul>
+            <li>Collaboration M365 centrale mais non structurée</li>
+            <li>Alignement RGPD à clarifier</li>
+            <li><strong>Résultat :</strong> accès/usages structurés, décisions documentées, feuille de route</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="background:#fff;border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm0-5a1.25 1.25 0 100 2.5A1.25 1.25 0 0012 15zm0-10a3.5 3.5 0 00-3.5 3.5 1 1 0 102 0A1.5 1.5 0 1112 10c-1.6 0-2.5.9-2.5 2.2V13a1 1 0 102 0v-.8c0-.6.2-.8.5-1 .9-.5 2.5-1.4 2.5-3.2A3.5 3.5 0 0012 5z'/></svg><h2>FAQ</h2></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>L'appel de découverte est-il facturé ?</h3>
+          <p class="sub">Non. Le premier appel sert à comprendre votre contexte. La première étape facturée est le diagnostic.</p>
+          <h3 style="margin-top:16px">Travaillez-vous avec nos partenaires ?</h3>
+          <p class="sub">Oui. Le diagnostic aide souvent à mieux cadrer les intégrateurs et fournisseurs existants.</p>
+        </div>
+        <div class="card">
+          <h3>Est-ce purement technique ?</h3>
+          <p class="sub">Non. L’objectif est la décision : risques, priorités, gouvernance et feuille de route.</p>
+          <h3 style="margin-top:16px">Canada / France : est-ce possible ?</h3>
+          <p class="sub">Oui, interventions à distance, avec adaptation au contexte européen (RGPD) si nécessaire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M4 4a3 3 0 013-3h10a3 3 0 013 3v9a3 3 0 01-3 3H9l-4.3 3.23A1 1 0 013 18.7V16a3 3 0 01-2-3V4zm3-1a1 1 0 00-1 1v9a1 1 0 001 1h1a1 1 0 011 1v1.7L8.9 15.2A1 1 0 019.5 15H17a1 1 0 001-1V4a1 1 0 00-1-1H7z'/></svg><h2>Contact</h2></div>
+      <p class="sub">Formulaire de contact (aucune donnée n’est stockée sur le site : ouverture de votre client mail).</p>
+      <div class="grid2">
+        <div class="card">
+          <form id="contactForm">
+            <div class="form-row">
+              <label>Nom
+                <input name="name" required placeholder="Votre nom" />
+              </label>
+              <label>Courriel
+                <input name="email" type="email" required placeholder="vous@entreprise.com" />
+              </label>
+            </div>
+            <label>Objet
+              <input name="subject" placeholder="Diagnostic M365 / Gouvernance / Sécurité" />
+            </label>
+            <label>Message
+              <textarea name="message" required placeholder="Décrivez brièvement votre contexte…"></textarea>
+            </label>
+            <button class="btn" type="submit">Préparer le courriel</button>
+            <div class="success" id="success">✓ Votre client mail va s’ouvrir avec le message prérempli.</div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Coordonnées</h3>
+          <p class="sub"><strong>Steeve Bouchard</strong><br>Gouvernance & Sécurité Microsoft 365</p>
+          <p class="sub">📧 <a href="mailto:contact@sbouchardm365.ca">contact@sbouchardm365.ca</a><br>📞 +1 (418) 662-1220</p>
+          <p class="sub">Interventions : Canada • France/Europe (RGPD)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© 2026 — Steeve Bouchard • Gouvernance & Sécurité Microsoft 365</div>
+</footer>
+
+<script>
+(function(){
+  const form = document.getElementById('contactForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const fd = new FormData(form);
+    const name = String(fd.get('name')||'').trim();
+    const email = String(fd.get('email')||'').trim();
+    const subject = String(fd.get('subject')||'Demande – Gouvernance & Sécurité Microsoft 365').trim();
+    const message = String(fd.get('message')||'').trim();
+    const to = 'contact@sbouchardm365.ca';
+    const body = "Bonjour,
+
+Je me présente : " + name + ".
+Mon courriel : " + email + ".
+
+Contexte / besoin :
+" + message + "
+
+Merci,";
+    const url = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    const ok = document.getElementById('success');
+    if(ok) ok.style.display = 'block';
+    window.location.href = url;
+  });
+})();
+</script>
+
+</body>
+</html>
