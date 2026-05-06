@@ -1,10 +1,72 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-CA">
+<!-- Schema ProfessionalService + Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SBouchard M365",
+  "url": "https://sbouchardm365.ca",
+  "logo": "https://sbouchardm365.ca/assets/steeve_bouchard_logo_final.png",
+  "description": "Conseil en gouvernance et sécurité Microsoft 365 pour PME et organisations.",
+  "areaServed": { "@type": "AdministrativeArea", "name": "Québec" },
+  "provider": {
+    "@type": "Person",
+    "name": "Steeve Bouchard",
+    "jobTitle": "Consultant en gouvernance et sécurité Microsoft 365",
+    "email": "contact@sbouchardm365.ca",
+    "telephone": "+1-418-662-1220",
+    "url": "https://sbouchardm365.ca"
+  },
+  "serviceType": [
+    "Gouvernance Microsoft 365",
+    "Sécurité Microsoft 365",
+    "Diagnostic M365",
+    "Accompagnement direction TI"
+  ]
+}
+</script>
+
+<!-- Schema FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Est-ce que le diagnostic Microsoft 365 est obligatoire avant un mandat ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Le diagnostic constitue le point d’entrée recommandé afin d’évaluer la gouvernance, la sécurité et les risques avant toute intervention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Travaillez-vous avec nos intégrateurs ou partenaires Microsoft existants ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Le diagnostic permet de mieux cadrer le travail des intégrateurs et partenaires Microsoft déjà en place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La gouvernance Microsoft 365 est-elle seulement une question technique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. La gouvernance Microsoft 365 est d’abord une question de décisions, de rôles et de responsabilités."
+      }
+    }
+  ]
+}
+</script>
+
 <head>
+  <meta name="author" content="Steeve Bouchard" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Steeve Bouchard — Gouvernance & Sécurité Microsoft 365</title>
-  <meta name="description" content="Consultant en gouvernance et sécurité Microsoft 365 — diagnostic, accompagnement et mandats ciblés." />
+  <title>Consultant Microsoft 365 – Gouvernance & Sécurité | Steeve Bouchard M365</title>
+  <meta name="description" content="Consultant en gouvernance et sécurité Microsoft 365. Diagnostic, accompagnement et mandats ciblés pour PME et organisations au Québec." />
   <style>
     :root{
       --bg:#f8fafc; --surface:#ffffff; --muted:#475569; --text:#0f172a;
@@ -104,8 +166,8 @@
   <div id="top" class="container hero">
     <div class="grid2">
       <div>
-        <div class="pill"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg> Diagnostic d’entrée • Microsoft 365</div>
-        <h1>Clarifiez la gouvernance<br><span style="color:var(--blue)">et la sécurité Microsoft 365</span></h1>
+        <div class="pill"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg> Diagnostic gouvernance & sécurité • Microsoft 365</div>
+        <h1>Consultant en gouvernance et sécurité Microsoft 365</h1>
         <p class="lead">J’aide les directions et équipes TI à reprendre le contrôle de Microsoft 365 : décisions claires, réduction des risques et gouvernance durable.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <a class="btn" href="#diagnostic">Démarrer avec un diagnostic</a>
@@ -126,9 +188,14 @@
 
   <section id="diagnostic">
     <div class="container">
-      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg><h2>Diagnostic M365 (point d’entrée recommandé)</h2></div>
+      <div class="section-title"><svg class='icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M10 4a6 6 0 104.472 10.03l3.249 3.25a1 1 0 001.414-1.415l-3.25-3.249A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z'/></svg><h2>Diagnostic de gouvernance et sécurité Microsoft 365</h2></div>
       <p class="sub">Avant d’investir davantage dans Microsoft 365, le diagnostic vous donne une vue d’ensemble : où vous en êtes, quels sont les risques réels, et quelles décisions doivent être prises.</p>
-      <div class="grid2">
+      <!-- ✅ CTA ajouté -->
+	  <a href="/diagnostic/" class="btn primary">
+		Auto‑évaluer mon environnement Microsoft 365
+      </a>
+
+	  <div class="grid2">
         <div class="card">
           <h3>Ce que couvre le diagnostic</h3>
           <ul>
