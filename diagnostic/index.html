@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnostic Microsoft 365 – Gouvernance & Sécurité</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Diagnostic rapide Microsoft 365</h1>
+  <p class="intro">
+    Auto‑évaluation rapide de votre posture de gouvernance et de sécurité Microsoft 365.
+    <strong>Objectif : éclairer la décision</strong>, pas faire un audit technique.
+  </p>
+
+  <form id="diagnostic">
+
+    <!-- QUESTIONS -->
+    <div class="question">
+      <p>1. Les rôles et responsabilités Microsoft 365 sont clairement définis</p>
+      <label><input type="radio" name="q0" value="2"> Oui</label>
+      <label><input type="radio" name="q0" value="1"> Partiellement</label>
+      <label><input type="radio" name="q0" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>2. Les décisions Microsoft 365 sont documentées</p>
+      <label><input type="radio" name="q1" value="2"> Oui</label>
+      <label><input type="radio" name="q1" value="1"> Partiellement</label>
+      <label><input type="radio" name="q1" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>3. Des règles claires existent pour la création et la gestion de Teams</p>
+      <label><input type="radio" name="q2" value="2"> Oui</label>
+      <label><input type="radio" name="q2" value="1"> Partiellement</label>
+      <label><input type="radio" name="q2" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>4. La structure SharePoint / OneDrive est cohérente à l’échelle de l’organisation</p>
+      <label><input type="radio" name="q3" value="2"> Oui</label>
+      <label><input type="radio" name="q3" value="1"> Partiellement</label>
+      <label><input type="radio" name="q3" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>5. Les accès externes sont encadrés</p>
+      <label><input type="radio" name="q4" value="2"> Oui</label>
+      <label><input type="radio" name="q4" value="1"> Partiellement</label>
+      <label><input type="radio" name="q4" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>6. Le MFA est appliqué aux comptes à privilèges</p>
+      <label><input type="radio" name="q5" value="2"> Oui</label>
+      <label><input type="radio" name="q5" value="1"> Partiellement</label>
+      <label><input type="radio" name="q5" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>7. Des règles d’accès conditionnel sont en place et revues</p>
+      <label><input type="radio" name="q6" value="2"> Oui</label>
+      <label><input type="radio" name="q6" value="1"> Partiellement</label>
+      <label><input type="radio" name="q6" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>8. Les comptes inactifs ou à risque sont identifiés et traités</p>
+      <label><input type="radio" name="q7" value="2"> Oui</label>
+      <label><input type="radio" name="q7" value="1"> Partiellement</label>
+      <label><input type="radio" name="q7" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>9. La direction dispose d’une vue claire des risques Microsoft 365</p>
+      <label><input type="radio" name="q8" value="2"> Oui</label>
+      <label><input type="radio" name="q8" value="1"> Partiellement</label>
+      <label><input type="radio" name="q8" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>10. Les incidents ou quasi‑incidents sont analysés</p>
+      <label><input type="radio" name="q9" value="2"> Oui</label>
+      <label><input type="radio" name="q9" value="1"> Partiellement</label>
+      <label><input type="radio" name="q9" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>11. Une feuille de route Microsoft 365 (6–12 mois) existe</p>
+      <label><input type="radio" name="q10" value="2"> Oui</label>
+      <label><input type="radio" name="q10" value="1"> Partiellement</label>
+      <label><input type="radio" name="q10" value="0"> Non</label>
+    </div>
+
+    <div class="question">
+      <p>12. La maturité Microsoft 365 est réévaluée périodiquement</p>
+      <label><input type="radio" name="q11" value="2"> Oui</label>
+      <label><input type="radio" name="q11" value="1"> Partiellement</label>
+      <label><input type="radio" name="q11" value="0"> Non</label>
+    </div>
+
+    <button type="button" class="btn-primary" onclick="calculateScore()">
+      Calculer mon score
+    </button>
+  </form>
+
+  <div id="result" class="result hidden"></div>
+  
+  <div id="lead" class="hidden">
+	<div id="lead2>Recevoir une analyse personnalisée</h2>
+	  <p>
+		Je vous reviens avec une lecture claire des risques et
+		des priorités adaptées à votre contexte.
+	  </p>
+
+	  <form
+		action="https://forminit.com/f/s5nfpebsa2b"
+		method="POST"
+	  >
+		<input
+		  type="text"
+		  name="fi-sender-fullName"
+		  placeholder="Nom complet"
+		  required
+		>
+
+		<input
+		  type="email"
+		  name="fi-sender-email"
+		  placeholder="Courriel professionnel"
+		  required
+		>
+
+		<textarea
+		  name="fi-text-context"
+		  placeholder="Contexte / organisation (optionnel)"
+		></textarea>
+
+		<!-- Champs remplis automatiquement -->
+		<input type="hidden" name="fi-meta-score" id="leadScore">
+		<input type="hidden" name="fi-meta-answers" id="leadAnswers">
+
+		<button type="submit" class="btn-secondary">
+		  Recevoir l’analyse détaillée
+		</button>
+	  </form>
+	</div>
+
+  
+  
+  
+  
+  
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
